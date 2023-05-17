@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import BarRight from './components/BarRight';
+import Content from './components/Content';
+import Menu from './components/Menu';
+import Sidebar from './components/Sidebar';
+import Twittear from './components/Twittear';
+import './index.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='max-w-[75rem] mx-auto px-6 grid grid-cols-1 lg:grid-cols-5 gap-5'>
+      <div className='hidden lg:block'>
+        <Sidebar />
+      </div>
+      <div className='col-span-2'>
+        <Menu/>
+        <Twittear />
+        <Content />
+      </div>
+      <div className='hidden lg:block col-span-2'>
+        <BarRight />
+      </div>
     </div>
   );
 }
